@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
 import LoginForm from "./components/login-form";
 import WelcomeImage from "./components/welcome-image";
@@ -19,6 +20,7 @@ function App() {
           <WelcomeImage />
         </div>
       </div>
+      <Outlet />
     </>
   );
 }
