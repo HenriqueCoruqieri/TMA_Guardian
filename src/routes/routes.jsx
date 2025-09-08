@@ -1,13 +1,11 @@
 import { lazy } from "react";
 import App from "../App";
 import { Suspense } from "react";
+import UseWithoutLogin from "../acess/pages/use-without-login";
 
 // Lazy loading das páginas
-const UserPage = lazy(() => import("../pages/user-page"));
+const UserPage = lazy(() => import("../acess/pages/use-without-login"));
 const NotFoundPage = lazy(() => import("../pages/not-found-page"));
-// Adicione outras páginas se existirem, exemplo:
-// const Home = lazy(() => import("../pages/home"));
-// const Login = lazy(() => import("../pages/login"));
 
 export const routes = [
   {
@@ -19,10 +17,19 @@ export const routes = [
     ),
   },
   {
-    path: "/userpage",
+    path: "/welcome",
     element: (
       <Suspense fallback={<div>Carregando...</div>}>
         <UserPage />
+      </Suspense>
+    ),
+  },
+
+  {
+    path: "/nouser",
+    element: (
+      <Suspense fallback={<div>Carregando...</div>}>
+        <UseWithoutLogin />
       </Suspense>
     ),
   },

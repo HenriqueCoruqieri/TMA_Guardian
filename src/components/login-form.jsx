@@ -10,14 +10,29 @@ import {
   Link,
 } from "@chakra-ui/react";
 
+import { LoaderCircle } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { PiClockUserLight } from "react-icons/pi";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const handleClick = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      navigate("/welcome");
+    }, 1500);
+  };
 
   const onSubmit = handleSubmit((data) => console.log(data));
 
@@ -64,8 +79,17 @@ const LoginForm = () => {
               Entrar
             </Button>
 
-            <Button rounded="full" type="submit">
-              Entrar com Google
+            <Button
+              className="gap-3"
+              rounded="full"
+              onClick={() => handleClick()}
+            >
+              <PiClockUserLight size="25px" />
+              {loading ? (
+                <LoaderCircle className="animate-spin" />
+              ) : (
+                "Entrar sem login"
+              )}
             </Button>
           </div>
 
