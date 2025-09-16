@@ -35,7 +35,7 @@ function WelcomeLogo() {
       src={image.image_url}
       alt={image.image_name}
       objectFit="cover"
-      style={{ maxWidth: "32%", maxHeight: "30%" }}
+      style={{ maxWidth: "500px", maxHeight: "auto" }}
     />
   );
 }

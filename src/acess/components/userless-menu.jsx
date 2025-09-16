@@ -9,7 +9,7 @@ import { TbMinusVertical } from "react-icons/tb";
 import { LuLogOut } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 
-const Menu = () => {
+const UserlessMenu = () => {
   const navigate = useNavigate();
 
   return (
@@ -54,4 +54,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default UserlessMenu;

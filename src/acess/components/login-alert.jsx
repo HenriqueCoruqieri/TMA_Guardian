@@ -17,7 +17,7 @@ const LoginAlert = () => {
           setStatus(true);
           setType("warning");
           setTitle(
-            "Todos os dados gravados nessa sessão serão perdidos após ser encerrada, clique em ''Login'' para se cadastrar ou entrar com seu usuário"
+            "Todos os dados gravados nessa sessão serão perdidos após ser encerrada, clique em 'Login' para entrar com seu usuário"
           );
         }}
       >

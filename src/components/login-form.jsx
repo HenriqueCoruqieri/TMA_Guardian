@@ -30,7 +30,7 @@ const LoginForm = () => {
     setLoading(true);
 
     setTimeout(() => {
-      navigate("/welcome");
+      navigate("/userless");
     }, 1500);
   };
 

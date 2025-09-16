@@ -7,16 +7,12 @@ import WelcomeLogo from "./components/welcome-logo";
 function App() {
   return (
     <>
-      <div className="h-screen w-screen bg-gray-600 inline-flex">
-        <div className="absolute">
+      <div className="min-h-screen w-full flex flex-col md:flex-row bg-gray-600">
+        <div className="flex flex-col items-center justify-center w-full md:w-1/3 md:h-1/2">
           <WelcomeLogo />
-        </div>
-
-        <div className="mt-[12%] p-12">
           <LoginForm />
         </div>
-
-        <div className="h-screen w-screen">
+        <div className="hidden md:flex w-2/2">
           <WelcomeImage />
         </div>
       </div>
