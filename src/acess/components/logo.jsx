@@ -3,7 +3,7 @@
 import { Image } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-const IMAGE_URL = "http://localhost:5173/logo.png";
+const IMAGE_URL = "http://localhost:5173/logo.webP";
 
 function Logo() {
   const [image, setImage] = useState(null);

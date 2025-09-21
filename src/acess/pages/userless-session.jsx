@@ -5,7 +5,7 @@ import Timer from "../components/timer";
 
 const UserlessSession = () => {
   return (
-    <div className="h-screen w-screen bg-gray-500">
+    <div className="h-screen w-screen bg-gray-600">
       <div className="flex justify-center">
         <UserlessMenu />
       </div>

@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const client = new Client(); // << não precisa passar nada aqui, ele lê do .env
+const client = new Client();
 await client.connect();
 
 console.log("Conectado ao banco:", client.database);
@@ -27,7 +27,7 @@ async function createSchema() {
             agent_name          VARCHAR(50)     NOT NULL,
             email               VARCHAR(50)     NOT NULL,
             password            VARCHAR(18)     NOT NULL,
-            created_at          TIMESTAMP       NOT NULL,
+            created_at          TIMESTAMP       NOT NULL DEFAULT now(),
 
             FOREIGN KEY (team_id) REFERENCES team(team_id)
         );

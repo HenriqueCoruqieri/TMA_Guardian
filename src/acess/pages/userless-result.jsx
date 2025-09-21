@@ -2,7 +2,7 @@ import UserlessMenu from "../components/userless-menu";
 
 const UserlessResult = () => {
   return (
-    <div className="h-screen w-screen bg-gray-500">
+    <div className="h-screen w-screen bg-gray-600">
       <div className="flex justify-center">
         <UserlessMenu />
       </div>

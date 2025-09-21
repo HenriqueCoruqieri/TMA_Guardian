@@ -37,7 +37,7 @@ const LoginForm = () => {
   const onSubmit = handleSubmit((data) => console.log(data));
 
   return (
-    <div className="h-140 w-100 bg-slate-700 rounded-2xl text-white shadow-2xl shadow-white">
+    <div className="h-140 w-100 bg-slate-700 rounded-3xl text-white shadow-2xl shadow-white">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack gap="4" align="flex-start" maxW="sm">
           {/* INPUTS DE LOGIN E SENHA */}
@@ -45,9 +45,12 @@ const LoginForm = () => {
             <FormControl isInvalid={!!errors.email}>
               <FormLabel>Email</FormLabel>
               <Input
+                placeholder="Digite seu email"
                 width="xs"
                 errorBorderColor="white"
-                {...register("email", { required: "Campo obrigatório" })}
+                {...register("email", {
+                  required: "Informe seu email cadastrado",
+                })}
               />
               <FormErrorMessage>
                 {errors.email && errors.email.message}
@@ -57,9 +60,10 @@ const LoginForm = () => {
             <FormControl isInvalid={!!errors.senha}>
               <FormLabel>Senha</FormLabel>
               <Input
+                placeholder="Digite sua senha"
                 errorBorderColor="white"
                 type="password"
-                {...register("senha", { required: "Campo obrigatório" })}
+                {...register("senha", { required: "Informe sua senha" })}
               />
               <FormErrorMessage>
                 {errors.senha && errors.senha.message}
@@ -84,18 +88,23 @@ const LoginForm = () => {
               rounded="full"
               onClick={() => handleClick()}
             >
-              <PiClockUserLight size="25px" />
               {loading ? (
                 <LoaderCircle className="animate-spin" />
               ) : (
-                "Entrar sem login"
+                <>
+                  <PiClockUserLight size="25px" />
+                  Entrar sem login
+                </>
               )}
             </Button>
           </div>
 
           <div className="w-full flex flex-col font-bold gap-2 items-start pl-6 p-3">
             <Link color="white">Esqueci minha senha</Link>
-            <Link color="white">Cadastrar</Link>
+
+            <Link href="http://localhost:5173/register" color="white">
+              Cadastrar
+            </Link>
           </div>
         </Stack>
       </form>

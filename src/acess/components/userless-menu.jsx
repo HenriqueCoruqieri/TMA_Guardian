@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Breadcrumb,
   BreadcrumbLink,
@@ -8,9 +9,19 @@ import {
 import { TbMinusVertical } from "react-icons/tb";
 import { LuLogOut } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const UserlessMenu = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const exitUserlessSessionClick = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      navigate("/");
+    }, 1500);
+  };
 
   return (
     <div className="flex justify-center">
@@ -50,7 +61,7 @@ const UserlessMenu = () => {
 
       <div className="absolute ml-460 mt-3">
         <Button
-          onClick={() => navigate("/")}
+          onClick={() => exitUserlessSessionClick(loading)}
           variant="outline"
           size="sm"
           rounded="full"
