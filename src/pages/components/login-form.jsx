@@ -10,6 +10,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 
+import { InputForm } from "./input-form";
 import { LoaderCircle } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -41,38 +42,34 @@ const LoginForm = ({ showUserlessSessionButton = true }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack gap="4" align="flex-start" maxW="sm">
           {/* INPUTS DE LOGIN E SENHA */}
-          <div className="space-y-6 p-8 mt-9">
-            <FormControl isInvalid={!!errors.email}>
-              <FormLabel>Email</FormLabel>
-              <Input
-                placeholder="Digite seu email"
-                width="xs"
-                errorBorderColor="white"
-                {...register("email", {
-                  required: "Informe seu email cadastrado",
-                })}
-              />
-              <FormErrorMessage>
-                {errors.email && errors.email.message}
-              </FormErrorMessage>
-            </FormControl>
+          <div className="w-full space-y-6 p-9.5 mt-9">
+            <InputForm
+              label="Email"
+              name="email"
+              type="email"
+              placeholder="Digite seu email"
+              error={errors.email}
+              size="full"
+              {...register("email", {
+                required: "Informe seu email cadastrado",
+              })}
+            />
 
-            <FormControl isInvalid={!!errors.senha}>
-              <FormLabel>Senha</FormLabel>
-              <Input
-                placeholder="Digite sua senha"
-                errorBorderColor="white"
-                type="password"
-                {...register("senha", { required: "Informe sua senha" })}
-              />
-              <FormErrorMessage>
-                {errors.senha && errors.senha.message}
-              </FormErrorMessage>
-            </FormControl>
+            <InputForm
+              label="Senha"
+              name="password"
+              type="password"
+              placeholder="Digite sua senha"
+              error={errors.password}
+              size="full"
+              {...register("password", {
+                required: "Informe sue senha cadastrada",
+              })}
+            />
           </div>
 
           {/* BOTÕES */}
-          <div className="flex flex-col ml-[10%] w-[80%] gap-4">
+          <div className="flex flex-col ml-[11%] w-[80%] gap-4">
             <Button
               border="2px"
               color="white"

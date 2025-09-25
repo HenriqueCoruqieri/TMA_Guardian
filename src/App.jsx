@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import LoginForm from "./components/login-form";
-import WelcomeImage from "./components/welcome-image";
-import WelcomeLogo from "./components/welcome-logo";
+import LoginForm from "./pages/components/login-form";
+import WelcomeImage from "./pages/components/welcome-image";
+import WelcomeLogo from "./pages/components/welcome-logo";
 
 function App() {
   return (

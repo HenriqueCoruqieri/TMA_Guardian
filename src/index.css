@@ -1,11 +1,22 @@
 @import "tailwindcss";
 
-@layer utilities {
-  .btn-primary {
-    @apply px-4 py-2 rounded bg-blue-500 text-white font-bold;
-  }
+@layer base {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    /* Pinta o fundo usando a variável CSS --autofill-bg */
+    -webkit-box-shadow: 0 0 0px 1000px var(--autofill-bg, transparent) inset !important;
+    box-shadow: 0 0 0px 1000px var(--autofill-bg, transparent) inset !important;
 
-  .btn-primary:hover {
-    @apply bg-blue-600;
+    /* Força a cor do texto (pode ser uma variável também!) */
+    -webkit-text-fill-color: var(--autofill-text, #fff) !important;
+
+    /* O truque da transição continua o mesmo */
+    transition: background-color 5000s ease-in-out 0s;
+
+    /* Outros estilos para consistência */
+    caret-color: var(--autofill-text, #fff) !important;
+    border-radius: inherit;
   }
 }

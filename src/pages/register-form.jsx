@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import RegisterHeader from "./components/register-header";
+import { InputForm } from "./components/input-form";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
@@ -77,52 +78,45 @@ const LoginForm = () => {
         className="bg-slate-700 p-8 text-white md:w-1/4 space-y-4 min-w-md rounded-3xl"
         onSubmit={handleSubmit(createUser)}
       >
-        <div>
-          <FormLabel>Usuário</FormLabel>
-          <Input {...register("agent_name")} placeholder="Nome do usuário" />
-          <p className="text-red-500 text-left p-1">
-            {errors.agent_name && <span>{errors.agent_name.message}</span>}
-          </p>
-        </div>
+        <InputForm
+          label="Usuário"
+          name="agent"
+          type="text"
+          placeholder="Digite um nome de usuário"
+          error={errors.agent_name}
+          size="full"
+          {...register("agent_name")}
+        />
 
-        <div>
-          <FormLabel>Email</FormLabel>
-          <Input
-            {...register("email")}
-            placeholder="Email válido"
-            type="email"
-          />
-          <p className="text-red-500 text-left p-1">
-            {errors.email && <span>{errors.email.message}</span>}
-          </p>
-        </div>
+        <InputForm
+          label="Email"
+          name="email"
+          type="email"
+          placeholder="Digite seu email"
+          error={errors.email}
+          size="full"
+          {...register("email")}
+        />
 
-        <div>
-          <FormLabel>Senha</FormLabel>
-          <Input
-            {...register("password")}
-            placeholder="Crie uma senha"
-            type="password"
-          />
-          <p className="text-red-500 text-left p-1">
-            {errors.password && <span>{errors.password.message}</span>}
-          </p>
-        </div>
+        <InputForm
+          label="Senha"
+          name="password"
+          type="password"
+          placeholder="Crie uma senha"
+          error={errors.password}
+          size="full"
+          {...register("password")}
+        />
 
-        <div>
-          <FormLabel>Confirma Senha</FormLabel>
-          <Input
-            {...register("confirmPassword")}
-            placeholder="Confirmar a senha"
-            type="password"
-          />
-          <p className="text-red-500 text-left p-1">
-            {errors.confirmPassword && (
-              <span>{errors.confirmPassword.message}</span>
-            )}
-          </p>
-        </div>
-
+        <InputForm
+          label="Confirmar Senha"
+          name="confirmPassword"
+          type="password"
+          placeholder="Confirme sua senha"
+          error={errors.confirmPassword}
+          size="full"
+          {...register("confirmPassword")}
+        />
         <div className="p-4">
           <RegisterButton loading={loading} />
         </div>

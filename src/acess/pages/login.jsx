@@ -1,4 +1,4 @@
-import LoginForm from "../../components/login-form";
+import LoginForm from "../../pages/components/login-form";
 import UserlessMenu from "../components/userless-menu";
 import { User } from "lucide-react";
 
