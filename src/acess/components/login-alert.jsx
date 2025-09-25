@@ -10,9 +10,9 @@ const LoginAlert = () => {
   const [title, setTitle] = useState("This is a success alert");
 
   return (
-    <div className="flex ml-[32%] ">
+    <div className="flex items-center gap-2">
       <Button
-        bgColor="yellow.400"
+        bgColor="yellow.500"
         color="white"
         rounded="full"
         onClick={() => {
@@ -26,8 +26,8 @@ const LoginAlert = () => {
         !
       </Button>
 
-      <div className="absolute ml-12 mt-2 font-bold">
-        <h1 className="text-white ">Sessão iniciada sem login</h1>
+      <div className="">
+        <h1 className="text-white font-bold">Sessão iniciada sem login</h1>
       </div>
 
       <ReactJsAlert

@@ -4,7 +4,7 @@ import { User } from "lucide-react";
 
 const Login = () => {
   return (
-    <div className="h-screen w-screen bg-gray-600">
+    <div className="min-h-screen w-screen bg-gray-600">
       <div className="flex justify-center">
         <UserlessMenu />
       </div>

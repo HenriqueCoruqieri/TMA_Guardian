@@ -5,18 +5,19 @@ import Timer from "../components/timer";
 
 const UserlessSession = () => {
   return (
-    <div className="h-screen w-screen bg-gray-600">
+    <div className="flex flex-col min-h-screen w-full bg-gray-600 overflow-x-hidden">
       <div className="flex justify-center">
         <UserlessMenu />
       </div>
 
       <div className="flex flex-col items-center space-y-8 mt-16 p-6">
         <Logo />
-        <Timer />
-      </div>
-
-      <div className="w-screen mt-2 items-center">
-        <LoginAlert />
+        <div className="w-full max-w-[700px] flex flex-col items-center">
+          <Timer />
+          <div className="w-full flex mt-4">
+            <LoginAlert />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -33,12 +33,13 @@ function Logo() {
 
   if (!image) return null;
   return (
-    <Image
-      src={image.image_url}
-      alt={image.image_name}
-      objectFit="cover"
-      style={{ maxWidth: "16%", maxHeight: "16%" }}
-    />
+    <div className="flex flex-col items-center w-full">
+      <Image
+        src={image.image_url}
+        alt={image.image_name}
+        className="w-[280px] h-auto mx-auto"
+      />
+    </div>
   );
 }
 
