@@ -1,4 +1,6 @@
+import LoginForm from "../../components/login-form";
 import UserlessMenu from "../components/userless-menu";
+import { User } from "lucide-react";
 
 const Login = () => {
   return (
@@ -7,8 +9,9 @@ const Login = () => {
         <UserlessMenu />
       </div>
 
-      <div className="">
-        <h1>Login</h1>
+      <div className="flex flex-col items-center p-12 space-y-8">
+        <User color="white" size="150" />
+        <LoginForm showUserlessSessionButton={false} />
       </div>
     </div>
   );

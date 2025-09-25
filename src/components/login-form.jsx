@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { PiClockUserLight } from "react-icons/pi";
 
-const LoginForm = () => {
+const LoginForm = ({ showUserlessSessionButton = true }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
@@ -83,20 +83,22 @@ const LoginForm = () => {
               Entrar
             </Button>
 
-            <Button
-              className="gap-3"
-              rounded="full"
-              onClick={() => handleClick()}
-            >
-              {loading ? (
-                <LoaderCircle className="animate-spin" />
-              ) : (
-                <>
-                  <PiClockUserLight size="25px" />
-                  Entrar sem login
-                </>
-              )}
-            </Button>
+            {showUserlessSessionButton && (
+              <Button
+                className="gap-3"
+                rounded="full"
+                onClick={() => handleClick()}
+              >
+                {loading ? (
+                  <LoaderCircle className="animate-spin" />
+                ) : (
+                  <>
+                    <PiClockUserLight size="25px" />
+                    Entrar sem login
+                  </>
+                )}
+              </Button>
+            )}
           </div>
 
           <div className="w-full flex flex-col font-bold gap-2 items-start pl-6 p-3">

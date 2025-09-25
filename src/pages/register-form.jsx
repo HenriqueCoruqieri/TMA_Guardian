@@ -1,11 +1,11 @@
 import { Input, FormLabel, Button } from "@chakra-ui/react";
 import RegisterButton from "./components/register-button";
-import { UserPlus, CornerDownLeft } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import RegisterHeader from "./components/register-header";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
@@ -72,23 +72,7 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col min-h-screen w-screen bg-gray-600 items-center p-2">
-      <div className="text-white text-5xl font-bold space-y-2">
-        <UserPlus className="ml-12" color="white" size="150" />
-        <h1>Cadastrar</h1>
-      </div>
-
-      <div className="flex p-6 mr-100">
-        <Button
-          type="button"
-          variant="outline"
-          rounded="full"
-          size="sm"
-          onClick={() => navigate(-1)}
-        >
-          <CornerDownLeft color="white" />
-        </Button>
-      </div>
-
+      <RegisterHeader />
       <form
         className="bg-slate-700 p-8 text-white md:w-1/4 space-y-4 min-w-md rounded-3xl"
         onSubmit={handleSubmit(createUser)}
